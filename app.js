@@ -228,4 +228,112 @@ document.addEventListener('DOMContentLoaded', () => {
       heroContent.style.transform = 'translateY(0)';
     }, 200);
   }
+
+  // === Tea Detail Modal Interactive Logic ===
+  const teaModal = document.getElementById('teaModal');
+  const modalClose = document.getElementById('modalClose');
+  const modalImageContainer = document.getElementById('modalImageContainer');
+  const modalBody = document.getElementById('modalBody');
+
+  if (teaModal && modalClose && modalImageContainer && modalBody) {
+    const teaCards = document.querySelectorAll('.tea-card');
+
+    teaCards.forEach(card => {
+      // Add visual hint that the card is clickable
+      card.style.cursor = 'pointer';
+      
+      card.addEventListener('click', () => {
+        const teaNameEl = card.querySelector('.tea-card-name');
+        if (!teaNameEl) return;
+        
+        const teaName = teaNameEl.textContent.trim();
+        const details = window.TEA_DETAILS ? window.TEA_DETAILS[teaName] : null;
+        
+        if (details) {
+          // 1. Populate Image or Placeholder
+          const cardImg = card.querySelector('.tea-card-img img');
+          const cardPlaceholder = card.querySelector('.tea-card-img .tea-placeholder');
+          
+          if (cardImg) {
+            modalImageContainer.innerHTML = `<img class="modal-img" src="${cardImg.src}" alt="${cardImg.alt}">`;
+          } else if (cardPlaceholder) {
+            modalImageContainer.innerHTML = `<div class="modal-img tea-placeholder" style="font-size: 5rem; height: 260px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--bg-tertiary), var(--bg-secondary));">${cardPlaceholder.textContent}</div>`;
+          } else {
+            modalImageContainer.innerHTML = '';
+          }
+          
+          // 2. Populate Body Content
+          modalBody.innerHTML = `
+            <div class="modal-header">
+              <div class="modal-title-row">
+                <h3 class="modal-title">${details.title}</h3>
+              </div>
+              <div class="modal-subtitle">${details.english}</div>
+              <div class="modal-badges">
+                <span class="modal-badge" style="background: rgba(200, 169, 110, 0.1); border-color: var(--gold); color: var(--gold)">${details.type}</span>
+                <span class="modal-badge">发酵度：${details.fermentation}</span>
+                <span class="modal-badge">🌡️ ${details.temp}</span>
+                <span class="modal-badge">📦 储存：${details.storage.split('，')[0]}</span>
+              </div>
+            </div>
+            
+            <div class="modal-section">
+              <h4 class="modal-section-title">✨ 茶叶功效</h4>
+              <p class="modal-text">${details.efficacy}</p>
+            </div>
+            
+            <div class="modal-section">
+              <h4 class="modal-section-title">📜 历史渊源</h4>
+              <p class="modal-text">${details.history}</p>
+            </div>
+            
+            <div class="modal-section">
+              <h4 class="modal-section-title">🎭 轶事趣闻</h4>
+              <p class="modal-text">${details.anecdote}</p>
+            </div>
+            
+            ${details.literature ? `
+            <div class="modal-section">
+              <h4 class="modal-section-title">📖 经典文献</h4>
+              <p class="modal-text">${details.literature}</p>
+            </div>
+            ` : ''}
+            
+            ${details.poem ? `
+            <div class="modal-section">
+              <h4 class="modal-section-title">✍️ 经典诗词</h4>
+              <div class="modal-poem">${details.poem}</div>
+            </div>
+            ` : ''}
+          `;
+          
+          // 3. Open Modal
+          teaModal.classList.add('active');
+          document.body.style.overflow = 'hidden'; // Lock background scroll
+        }
+      });
+    });
+
+    // Close Modal Events
+    const closeModal = () => {
+      teaModal.classList.remove('active');
+      document.body.style.overflow = ''; // Restore background scroll
+    };
+
+    modalClose.addEventListener('click', closeModal);
+    
+    // Close on clicking overlay background
+    teaModal.addEventListener('click', (e) => {
+      if (e.target === teaModal) {
+        closeModal();
+      }
+    });
+
+    // Close on Escape key press
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && teaModal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  }
 });
