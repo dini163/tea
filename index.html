@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="茶之百科 — 探索中国六大茶类的世界。了解绿茶、白茶、黄茶、乌龙茶、红茶、黑茶的分类、冲泡温度与存放方式。">
+  <meta name="keywords" content="茶叶,茶分类,绿茶,白茶,黄茶,乌龙茶,红茶,黑茶,冲泡温度,存放方法,花茶,普洱茶">
+  <title>茶之百科 — 中国茶叶分类·冲泡·存放指南</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-decoration">
+      <span class="floating-leaf">🍃</span>
+      <span class="floating-leaf">🌿</span>
+      <span class="floating-leaf">🍂</span>
+      <span class="floating-leaf">🍃</span>
+      <span class="floating-leaf">🌿</span>
+      <span class="floating-leaf">🍂</span>
+    </div>
+    <div class="hero-content">
+      <p class="hero-subtitle">探索 · 品味 · 收藏</p>
+      <h1 class="hero-title">茶之百科</h1>
+      <hr class="hero-line">
+      <p class="hero-desc">
+        从不发酵的鲜翠绿茶，到越陈越香的醇厚黑茶。<br>
+        三层分类法带你系统认识中国茶的全貌——种类、冲泡、存放，一站俱全。
+      </p>
+    </div>
+    <div class="scroll-indicator" onclick="document.getElementById('nav').scrollIntoView({behavior:'smooth'})">
+      <span>向下探索</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STICKY NAVIGATION
+       ============================================================ -->
+  <nav class="nav-sticky" id="nav">
+    <div class="container nav-inner">
+      <div class="nav-logo">🍵 茶之百科</div>
+      <ul class="nav-tabs" id="navTabs">
+        <li class="nav-tab active" data-layer="all">全部</li>
+        <li class="nav-tab" data-layer="layer1">基础茶类</li>
+        <li class="nav-tab" data-layer="layer2">再加工茶</li>
+        <li class="nav-tab" data-layer="layer3">商品命名</li>
+        <li class="nav-tab" data-layer="brewing">冲泡指南</li>
+      </ul>
+      <div class="nav-search">
+        <span class="nav-search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="搜索茶叶名称…" autocomplete="off">
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       LAYER 1: BASIC TEA TYPES
+       ============================================================ -->
+  <section class="section layer-section" id="layer1" data-layer="layer1">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">第一层 · 基础茶类</span>
+        <h2 class="section-title">六大基础茶类</h2>
+        <p class="section-desc">按制作工艺与发酵程度分类，这是中国茶最根本的科学分类体系。从不发酵到后发酵，风味由清雅走向醇厚。</p>
+      </div>
+
+      <!-- Fermentation Spectrum -->
+      <div class="spectrum-bar reveal">
+        <div class="spectrum-label">← 发酵程度光谱 →</div>
+        <div class="spectrum-track">
+          <div class="spectrum-gradient"></div>
+        </div>
+        <div class="spectrum-markers">
+          <div class="spectrum-marker" style="color: var(--cat-green)">
+            <div class="spectrum-dot" style="background: var(--cat-green)"></div>
+            <span class="spectrum-name">绿茶</span>
+            <span class="spectrum-pct">0%</span>
+          </div>
+          <div class="spectrum-marker" style="color: var(--cat-white)">
+            <div class="spectrum-dot" style="background: var(--cat-white)"></div>
+            <span class="spectrum-name">白茶</span>
+            <span class="spectrum-pct">5-10%</span>
+          </div>
+          <div class="spectrum-marker" style="color: var(--cat-yellow)">
+            <div class="spectrum-dot" style="background: var(--cat-yellow)"></div>
+            <span class="spectrum-name">黄茶</span>
+            <span class="spectrum-pct">10-20%</span>
+          </div>
+          <div class="spectrum-marker" style="color: var(--cat-oolong)">
+            <div class="spectrum-dot" style="background: var(--cat-oolong)"></div>
+            <span class="spectrum-name">乌龙茶</span>
+            <span class="spectrum-pct">30-60%</span>
+          </div>
+          <div class="spectrum-marker" style="color: var(--cat-red)">
+            <div class="spectrum-dot" style="background: var(--cat-red)"></div>
+            <span class="spectrum-name">红茶</span>
+            <span class="spectrum-pct">80-95%</span>
+          </div>
+          <div class="spectrum-marker" style="color: var(--cat-dark)">
+            <div class="spectrum-dot" style="background: var(--cat-dark)"></div>
+            <span class="spectrum-name">黑茶</span>
+            <span class="spectrum-pct">后发酵</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GREEN TEA -->
+      <div class="tea-category" id="cat-green">
+        <div class="category-header reveal-left">
+          <div class="category-icon" style="background: rgba(127,176,105,0.15)">🟢</div>
+          <div class="category-info">
+            <h3 class="category-name" style="color: var(--cat-green)">绿茶 · 不发酵</h3>
+            <div class="category-meta">
+              <span class="category-tag"><span class="tag-dot" style="background: var(--cat-green)"></span> 发酵度 0%</span>
+              <span class="category-tag">🌡️ 75-85°C</span>
+              <span class="category-tag">📦 密封冷藏</span>
+            </div>
+          </div>
+        </div>
+        <div class="tea-grid" data-category="绿茶">
+          <!-- Longjing -->
+          <div class="tea-card" data-name="龙井 西湖龙井 绿茶 Longjing">
+            <div class="tea-card-img">
+              <img src="images/longjing.png" alt="龙井" loading="lazy">
+              <span class="tea-badge" style="background: rgba(127,176,105,0.85)">绿茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">西湖龙井</h4>
+              <p class="tea-card-name-en">Xi Hu Long Jing</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">75-80°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:77%;background:var(--cat-green)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">6-12 个月</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封冷藏 (0-5°C)，避光防潮，开封后尽快饮完</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Biluochun -->
+          <div class="tea-card" data-name="碧螺春 绿茶 Biluochun">
+            <div class="tea-card-img">
+              <img src="images/biluochun.png" alt="碧螺春" loading="lazy">
+              <span class="tea-badge" style="background: rgba(127,176,105,0.85)">绿茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">碧螺春</h4>
+              <p class="tea-card-name-en">Bi Luo Chun</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">75-80°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:77%;background:var(--cat-green)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">3-6 个月</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封冷藏 (0-5°C)，防潮防异味，鲜饮为佳</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Huangshan Maofeng -->
+          <div class="tea-card" data-name="黄山毛峰 绿茶 Huangshan Maofeng">
+            <div class="tea-card-img">
+              <img src="images/huangshan_maofeng.png" alt="黄山毛峰" loading="lazy">
+              <span class="tea-badge" style="background: rgba(127,176,105,0.85)">绿茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">黄山毛峰</h4>
+              <p class="tea-card-name-en">Huang Shan Mao Feng</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">80-85°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:82%;background:var(--cat-green)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">6-12 个月</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封冷藏 (0-5°C)，避光防潮，中国十大名茶之一</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Liu'an Guapian -->
+          <div class="tea-card" data-name="六安瓜片 绿茶 Liuan Guapian">
+            <div class="tea-card-img">
+              <div class="tea-placeholder">🍃</div>
+              <span class="tea-badge" style="background: rgba(127,176,105,0.85)">绿茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">六安瓜片</h4>
+              <p class="tea-card-name-en">Liu An Gua Pian</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">80-85°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:82%;background:var(--cat-green)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">6-12 个月</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封冷藏，避光防潮，唯一无芽无梗的绿茶</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Taiping Houkui -->
+          <div class="tea-card" data-name="太平猴魁 绿茶 Taiping Houkui">
+            <div class="tea-card-img">
+              <div class="tea-placeholder">🌿</div>
+              <span class="tea-badge" style="background: rgba(127,176,105,0.85)">绿茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">太平猴魁</h4>
+              <p class="tea-card-name-en">Tai Ping Hou Kui</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">85-90°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:87%;background:var(--cat-green)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">6-12 个月</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封冷藏，避光防潮，叶片最大的绿茶品种</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Xinyang Maojian -->
+          <div class="tea-card" data-name="信阳毛尖 绿茶 Xinyang Maojian">
+            <div class="tea-card-img">
+              <div class="tea-placeholder">🍵</div>
+              <span class="tea-badge" style="background: rgba(127,176,105,0.85)">绿茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">信阳毛尖</h4>
+              <p class="tea-card-name-en">Xin Yang Mao Jian</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">75-85°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:80%;background:var(--cat-green)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">6-12 个月</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封冷藏 (0-5°C)，避光防潮，河南名茶代表</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHITE TEA -->
+      <div class="tea-category" id="cat-white">
+        <div class="category-header reveal-left">
+          <div class="category-icon" style="background: rgba(216,207,192,0.15)">⚪</div>
+          <div class="category-info">
+            <h3 class="category-name" style="color: var(--cat-white)">白茶 · 微发酵</h3>
+            <div class="category-meta">
+              <span class="category-tag"><span class="tag-dot" style="background: var(--cat-white)"></span> 发酵度 5-10%</span>
+              <span class="category-tag">🌡️ 85-95°C</span>
+              <span class="category-tag">📦 密封常温</span>
+            </div>
+          </div>
+        </div>
+        <div class="tea-grid" data-category="白茶">
+          <div class="tea-card" data-name="白毫银针 白茶 Silver Needle">
+            <div class="tea-card-img">
+              <img src="images/baihao_yinzhen.png" alt="白毫银针" loading="lazy">
+              <span class="tea-badge" style="background: rgba(180,170,155,0.85)">白茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">白毫银针</h4>
+              <p class="tea-card-name-en">Bai Hao Yin Zhen</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">85-90°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:87%;background:var(--cat-white)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">可长期存放</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">三层密封（锡纸+塑料袋+纸箱），干燥通风处，"一年茶三年药七年宝"</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-card" data-name="白牡丹 白茶 White Peony">
+            <div class="tea-card-img">
+              <img src="images/baimudan.png" alt="白牡丹" loading="lazy">
+              <span class="tea-badge" style="background: rgba(180,170,155,0.85)">白茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">白牡丹</h4>
+              <p class="tea-card-name-en">Bai Mu Dan</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">90-95°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:92%;background:var(--cat-white)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">可长期存放</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封常温，干燥通风，避免异味，越陈越醇</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- YELLOW TEA -->
+      <div class="tea-category" id="cat-yellow">
+        <div class="category-header reveal-left">
+          <div class="category-icon" style="background: rgba(212,168,67,0.15)">🟡</div>
+          <div class="category-info">
+            <h3 class="category-name" style="color: var(--cat-yellow)">黄茶 · 轻发酵</h3>
+            <div class="category-meta">
+              <span class="category-tag"><span class="tag-dot" style="background: var(--cat-yellow)"></span> 发酵度 10-20%（闷黄工艺）</span>
+              <span class="category-tag">🌡️ 80-85°C</span>
+              <span class="category-tag">📦 密封冷藏</span>
+            </div>
+          </div>
+        </div>
+        <div class="tea-grid" data-category="黄茶">
+          <div class="tea-card" data-name="君山银针 黄茶 Junshan Yinzhen">
+            <div class="tea-card-img">
+              <img src="images/junshan_yinzhen.png" alt="君山银针" loading="lazy">
+              <span class="tea-badge" style="background: rgba(212,168,67,0.85)">黄茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">君山银针</h4>
+              <p class="tea-card-name-en">Jun Shan Yin Zhen</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">80-85°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:82%;background:var(--cat-yellow)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">6-12 个月</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封冷藏，避光防潮，产量稀少需珍惜</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OOLONG TEA -->
+      <div class="tea-category" id="cat-oolong">
+        <div class="category-header reveal-left">
+          <div class="category-icon" style="background: rgba(58,138,92,0.15)">🔵</div>
+          <div class="category-info">
+            <h3 class="category-name" style="color: var(--cat-oolong)">乌龙茶（青茶）· 半发酵</h3>
+            <div class="category-meta">
+              <span class="category-tag"><span class="tag-dot" style="background: var(--cat-oolong)"></span> 发酵度 30-60%</span>
+              <span class="category-tag">🌡️ 90-100°C</span>
+              <span class="category-tag">📦 密封常温/冷藏</span>
+            </div>
+          </div>
+        </div>
+        <div class="tea-grid" data-category="乌龙茶">
+          <div class="tea-card" data-name="铁观音 乌龙茶 Tieguanyin">
+            <div class="tea-card-img">
+              <img src="images/tieguanyin.png" alt="铁观音" loading="lazy">
+              <span class="tea-badge" style="background: rgba(58,138,92,0.85)">乌龙茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">铁观音</h4>
+              <p class="tea-card-name-en">Tie Guan Yin</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">95-100°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:97%;background:var(--cat-oolong)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">清香型冷藏 18 月</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">清香型真空冷藏 (-18°C)，浓香型密封常温避光</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-card" data-name="大红袍 乌龙茶 岩茶 Da Hong Pao">
+            <div class="tea-card-img">
+              <img src="images/dahongpao.png" alt="大红袍" loading="lazy">
+              <span class="tea-badge" style="background: rgba(58,138,92,0.85)">乌龙茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">大红袍</h4>
+              <p class="tea-card-name-en">Da Hong Pao</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">95-100°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:97%;background:var(--cat-oolong)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">3-5 年</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封常温，干燥避光，岩茶焙火后耐存</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Wuyi Yancha -->
+          <div class="tea-card" data-name="武夷岩茶 乌龙茶 肉桂 水仙 Wuyi Rock Tea">
+            <div class="tea-card-img">
+              <div class="tea-placeholder">🏔️</div>
+              <span class="tea-badge" style="background: rgba(58,138,92,0.85)">乌龙茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">武夷岩茶</h4>
+              <p class="tea-card-name-en">Wu Yi Yan Cha (Rock Tea)</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">95-100°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:97%;background:var(--cat-oolong)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">3-5 年</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封常温避光，焙火后耐存。含肉桂、水仙、大红袍等品种</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RED TEA (Black tea in English) -->
+      <div class="tea-category" id="cat-red">
+        <div class="category-header reveal-left">
+          <div class="category-icon" style="background: rgba(199,91,57,0.15)">🔴</div>
+          <div class="category-info">
+            <h3 class="category-name" style="color: var(--cat-red)">红茶 · 全发酵</h3>
+            <div class="category-meta">
+              <span class="category-tag"><span class="tag-dot" style="background: var(--cat-red)"></span> 发酵度 80-95%</span>
+              <span class="category-tag">🌡️ 90-95°C</span>
+              <span class="category-tag">📦 密封常温</span>
+            </div>
+          </div>
+        </div>
+        <div class="tea-grid" data-category="红茶">
+          <div class="tea-card" data-name="正山小种 红茶 Lapsang Souchong">
+            <div class="tea-card-img">
+              <img src="images/zhengshan_xiaozhong.png" alt="正山小种" loading="lazy">
+              <span class="tea-badge" style="background: rgba(199,91,57,0.85)">红茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">正山小种</h4>
+              <p class="tea-card-name-en">Zheng Shan Xiao Zhong</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">90-95°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:92%;background:var(--cat-red)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">2-3 年</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封常温，干燥避光，世界红茶鼻祖</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-card" data-name="金骏眉 红茶 Jin Jun Mei">
+            <div class="tea-card-img">
+              <img src="images/jinjunmei.png" alt="金骏眉" loading="lazy">
+              <span class="tea-badge" style="background: rgba(199,91,57,0.85)">红茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">金骏眉</h4>
+              <p class="tea-card-name-en">Jin Jun Mei</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">90°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:90%;background:var(--cat-red)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">1-3 年</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封常温，避光防潮，全芽头采制珍品</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Qimen Red Tea -->
+          <div class="tea-card" data-name="祁门红茶 红茶 祁红 Keemun Qimen">
+            <div class="tea-card-img">
+              <div class="tea-placeholder">🫖</div>
+              <span class="tea-badge" style="background: rgba(199,91,57,0.85)">红茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">祁门红茶</h4>
+              <p class="tea-card-name-en">Qi Men Hong Cha (Keemun)</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">90-95°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:92%;background:var(--cat-red)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">2-3 年</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封常温，干燥避光，世界三大高香红茶之一</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DARK TEA -->
+      <div class="tea-category" id="cat-dark">
+        <div class="category-header reveal-left">
+          <div class="category-icon" style="background: rgba(107,83,68,0.15)">⚫</div>
+          <div class="category-info">
+            <h3 class="category-name" style="color: #a08b76">黑茶 · 后发酵</h3>
+            <div class="category-meta">
+              <span class="category-tag"><span class="tag-dot" style="background: var(--cat-dark)"></span> 后发酵（渥堆/自然陈化）</span>
+              <span class="category-tag">🌡️ 95-100°C</span>
+              <span class="category-tag">📦 通风干燥</span>
+            </div>
+          </div>
+        </div>
+        <div class="tea-grid" data-category="黑茶">
+          <div class="tea-card" data-name="普洱熟茶 黑茶 Pu-erh">
+            <div class="tea-card-img">
+              <img src="images/puer_shu.png" alt="普洱熟茶" loading="lazy">
+              <span class="tea-badge" style="background: rgba(107,83,68,0.85)">黑茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">普洱熟茶</h4>
+              <p class="tea-card-name-en">Pu-erh Shu Cha</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">95-100°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:97%;background:var(--cat-dark)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">越陈越香</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">通风干燥，温度20-30°C，湿度60-70%，离墙离地</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-card" data-name="安化黑茶 黑茶 Anhua">
+            <div class="tea-card-img">
+              <img src="images/anhua_heicha.png" alt="安化黑茶" loading="lazy">
+              <span class="tea-badge" style="background: rgba(107,83,68,0.85)">黑茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">安化黑茶</h4>
+              <p class="tea-card-name-en">An Hua Hei Cha</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">100°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:100%;background:var(--cat-dark)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">越陈越香</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">通风干燥，避免异味，金花茯砖可长期陈放</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-card" data-name="六堡茶 黑茶 Liu Bao">
+            <div class="tea-card-img">
+              <img src="images/liubao.png" alt="六堡茶" loading="lazy">
+              <span class="tea-badge" style="background: rgba(107,83,68,0.85)">黑茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">六堡茶</h4>
+              <p class="tea-card-name-en">Liu Bao Cha</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">95-100°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:97%;background:var(--cat-dark)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">越陈越香</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">通风干燥，广西梧州特产，槟榔香为特色</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="container"><div class="section-divider"><span>🍃</span></div></div>
+
+  <!-- ============================================================
+       LAYER 2: REPROCESSED TEAS
+       ============================================================ -->
+  <section class="section layer-section" id="layer2" data-layer="layer2">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">第二层 · 再加工茶</span>
+        <h2 class="section-title">再加工茶</h2>
+        <p class="section-desc">以六大基础茶为原料，通过窨花、添加辅料或改变形态等二次工艺，创造出风味独特的新品类。</p>
+      </div>
+
+      <!-- FLOWER TEA -->
+      <div class="tea-category" id="cat-flower">
+        <div class="category-header reveal-left">
+          <div class="category-icon" style="background: rgba(212,120,156,0.15)">🌸</div>
+          <div class="category-info">
+            <h3 class="category-name" style="color: var(--cat-flower)">花茶 · 鲜花窨制</h3>
+            <div class="category-meta">
+              <span class="category-tag"><span class="tag-dot" style="background: var(--cat-flower)"></span> 窨花工艺</span>
+              <span class="category-tag">🌡️ 80-90°C</span>
+              <span class="category-tag">📦 密封避光</span>
+            </div>
+          </div>
+        </div>
+        <div class="tea-grid" data-category="花茶">
+          <div class="tea-card" data-name="茉莉花茶 花茶 Jasmine">
+            <div class="tea-card-img">
+              <img src="images/molihua_cha.png" alt="茉莉花茶" loading="lazy">
+              <span class="tea-badge" style="background: rgba(212,120,156,0.85)">花茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">茉莉花茶</h4>
+              <p class="tea-card-name-en">Mo Li Hua Cha</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">80-85°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:82%;background:var(--cat-flower)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">12-18 个月</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封避光，防止花香散失，干燥常温</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tea-card" data-name="桂花乌龙 花茶 Osmanthus Oolong">
+            <div class="tea-card-img">
+              <img src="images/guihua_wulong.png" alt="桂花乌龙" loading="lazy">
+              <span class="tea-badge" style="background: rgba(212,120,156,0.85)">花茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">桂花乌龙</h4>
+              <p class="tea-card-name-en">Gui Hua Wu Long</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">85-90°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:87%;background:var(--cat-flower)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">12-18 个月</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封避光，低温干燥，保持桂花清香</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CITRUS PU-ERH TEA -->
+      <div class="tea-category" id="cat-citrus">
+        <div class="category-header reveal-left">
+          <div class="category-icon" style="background: rgba(232,148,58,0.15)">🍊</div>
+          <div class="category-info">
+            <h3 class="category-name" style="color: var(--cat-citrus)">柑普茶 · 柑皮+普洱</h3>
+            <div class="category-meta">
+              <span class="category-tag"><span class="tag-dot" style="background: var(--cat-citrus)"></span> 柑皮填充工艺</span>
+              <span class="category-tag">🌡️ 95-100°C</span>
+              <span class="category-tag">📦 通风干燥</span>
+            </div>
+          </div>
+        </div>
+        <div class="tea-grid" data-category="柑普茶">
+          <div class="tea-card" data-name="小青柑 柑普茶 Xiaoqinggan">
+            <div class="tea-card-img">
+              <img src="images/xiaoqinggan.png" alt="小青柑" loading="lazy">
+              <span class="tea-badge" style="background: rgba(232,148,58,0.85)">柑普茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">小青柑</h4>
+              <p class="tea-card-name-en">Xiao Qing Gan</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">100°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:100%;background:var(--cat-citrus)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">越陈越佳</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">通风干燥，避免日晒，陈化后果香与茶香更融合</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHENPI TEA -->
+      <div class="tea-category" id="cat-chenpi">
+        <div class="category-header reveal-left">
+          <div class="category-icon" style="background: rgba(196,122,46,0.15)">🟠</div>
+          <div class="category-info">
+            <h3 class="category-name" style="color: var(--cat-chenpi)">陈皮茶 · 陈皮+茶底</h3>
+            <div class="category-meta">
+              <span class="category-tag"><span class="tag-dot" style="background: var(--cat-chenpi)"></span> 陈皮调配</span>
+              <span class="category-tag">🌡️ 95-100°C</span>
+              <span class="category-tag">📦 干燥通风</span>
+            </div>
+          </div>
+        </div>
+        <div class="tea-grid" data-category="陈皮茶">
+          <div class="tea-card" data-name="陈皮白茶 陈皮茶 Chenpi White">
+            <div class="tea-card-img">
+              <img src="images/chenpi_baicha.png" alt="陈皮白茶" loading="lazy">
+              <span class="tea-badge" style="background: rgba(196,122,46,0.85)">陈皮茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">陈皮白茶</h4>
+              <p class="tea-card-name-en">Chen Pi Bai Cha</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">95-100°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:97%;background:var(--cat-chenpi)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">越陈越香</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">干燥通风，避免异味，陈皮与白茶双重陈化增值</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPRESSED TEA -->
+      <div class="tea-category" id="cat-compressed">
+        <div class="category-header reveal-left">
+          <div class="category-icon" style="background: rgba(139,115,85,0.15)">🧱</div>
+          <div class="category-info">
+            <h3 class="category-name" style="color: var(--cat-compressed)">紧压茶 · 蒸压成型</h3>
+            <div class="category-meta">
+              <span class="category-tag"><span class="tag-dot" style="background: var(--cat-compressed)"></span> 蒸压/模压工艺</span>
+              <span class="category-tag">🌡️ 95-100°C</span>
+              <span class="category-tag">📦 通风干燥</span>
+            </div>
+          </div>
+        </div>
+        <div class="tea-grid" data-category="紧压茶">
+          <div class="tea-card" data-name="普洱茶砖 紧压茶 Pu-erh Brick">
+            <div class="tea-card-img">
+              <img src="images/puer_brick.png" alt="普洱茶砖" loading="lazy">
+              <span class="tea-badge" style="background: rgba(139,115,85,0.85)">紧压茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">普洱茶砖</h4>
+              <p class="tea-card-name-en">Pu-erh Cha Zhuan</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">100°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:100%;background:var(--cat-compressed)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">越陈越香</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">通风干燥，避免异味，竹壳/棉纸包裹，离墙离地</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXTRACT / INSTANT TEA -->
+      <div class="tea-category" id="cat-extract">
+        <div class="category-header reveal-left">
+          <div class="category-icon" style="background: rgba(106,171,158,0.15)">⚡</div>
+          <div class="category-info">
+            <h3 class="category-name" style="color: var(--cat-extract)">萃取/速溶茶 · 工业萃取</h3>
+            <div class="category-meta">
+              <span class="category-tag"><span class="tag-dot" style="background: var(--cat-extract)"></span> 现代工业产物</span>
+              <span class="category-tag">🌡️ 按说明冲泡</span>
+              <span class="category-tag">📦 密封干燥</span>
+            </div>
+          </div>
+        </div>
+        <div class="tea-grid" data-category="速溶茶">
+          <div class="tea-card" data-name="抹茶粉 速溶茶 Matcha">
+            <div class="tea-card-img">
+              <div class="tea-placeholder">🍵</div>
+              <span class="tea-badge" style="background: rgba(106,171,158,0.85)">速溶茶</span>
+            </div>
+            <div class="tea-card-body">
+              <h4 class="tea-card-name">抹茶粉</h4>
+              <p class="tea-card-name-en">Matcha</p>
+              <div class="tea-card-info">
+                <div class="tea-info-item">
+                  <span class="tea-info-label">冲泡温度</span>
+                  <span class="tea-info-value">70-80°C</span>
+                  <div class="temp-bar"><div class="temp-bar-fill" style="width:75%;background:var(--cat-extract)"></div></div>
+                </div>
+                <div class="tea-info-item">
+                  <span class="tea-info-label">保质期</span>
+                  <span class="tea-info-value">开封后 1-2 月</span>
+                </div>
+                <div class="tea-info-item tea-info-storage">
+                  <span class="tea-info-label">存放方式</span>
+                  <span class="tea-info-value">密封冷藏，避光防潮，开封后尽快使用</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="container"><div class="section-divider"><span>🌿</span></div></div>
+
+  <!-- ============================================================
+       LAYER 3: COMMERCIAL NAMING
+       ============================================================ -->
+  <section class="section layer-section" id="layer3" data-layer="layer3">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">第三层 · 商品命名</span>
+        <h2 class="section-title">"名不副实"的茶名</h2>
+        <p class="section-desc">市场上很多茶的名字容易造成分类误解。以下对照表帮你看清每款茶的真实身份。</p>
+      </div>
+
+      <div class="naming-table-wrapper reveal">
+        <table class="naming-table">
+          <thead>
+            <tr>
+              <th>商品名</th>
+              <th>实际归属</th>
+              <th>为什么容易搞混</th>
+              <th>冲泡温度</th>
+              <th>存放</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="naming-highlight">安吉白茶</td>
+              <td><span class="naming-actual" style="border-color:var(--cat-green);color:var(--cat-green)">绿茶</span></td>
+              <td>名字含"白"，实际是绿茶工艺。"白"指白化品种的叶色</td>
+              <td>75-80°C</td>
+              <td>密封冷藏</td>
+            </tr>
+            <tr>
+              <td class="naming-highlight">大红袍</td>
+              <td><span class="naming-actual" style="border-color:var(--cat-oolong);color:var(--cat-oolong)">乌龙茶（岩茶）</span></td>
+              <td>名字含"红"，实际是武夷山乌龙茶名丛</td>
+              <td>95-100°C</td>
+              <td>密封常温</td>
+            </tr>
+            <tr>
+              <td class="naming-highlight">铁观音</td>
+              <td><span class="naming-actual" style="border-color:var(--cat-oolong);color:var(--cat-oolong)">乌龙茶</span></td>
+              <td>名字无茶类线索，安溪县特产品种</td>
+              <td>95-100°C</td>
+              <td>清香冷藏/浓香常温</td>
+            </tr>
+            <tr>
+              <td class="naming-highlight">普洱茶（生）</td>
+              <td><span class="naming-actual" style="border-color:var(--cat-green);color:var(--cat-green)">绿茶 → 黑茶</span></td>
+              <td>新茶近似绿茶，陈化后转为黑茶属性，跨分类</td>
+              <td>90-95°C</td>
+              <td>通风干燥，陈化</td>
+            </tr>
+            <tr>
+              <td class="naming-highlight">普洱茶（熟）</td>
+              <td><span class="naming-actual" style="border-color:var(--cat-dark);color:#a08b76">黑茶</span></td>
+              <td>渥堆发酵加速陈化，属于标准后发酵黑茶</td>
+              <td>95-100°C</td>
+              <td>通风干燥</td>
+            </tr>
+            <tr>
+              <td class="naming-highlight">金骏眉</td>
+              <td><span class="naming-actual" style="border-color:var(--cat-red);color:var(--cat-red)">红茶</span></td>
+              <td>名字含"金"，联想黄茶？实为正山小种创新品种</td>
+              <td>90°C</td>
+              <td>密封常温</td>
+            </tr>
+            <tr>
+              <td class="naming-highlight">凤凰单丛</td>
+              <td><span class="naming-actual" style="border-color:var(--cat-oolong);color:var(--cat-oolong)">乌龙茶</span></td>
+              <td>广东潮州特产，单株采制，香型丰富</td>
+              <td>95-100°C</td>
+              <td>密封常温</td>
+            </tr>
+            <tr>
+              <td class="naming-highlight">武夷岩茶</td>
+              <td><span class="naming-actual" style="border-color:var(--cat-oolong);color:var(--cat-oolong)">乌龙茶</span></td>
+              <td>"岩"指武夷山丹霞地貌，含肉桂、水仙、大红袍等数百品种</td>
+              <td>95-100°C</td>
+              <td>密封常温</td>
+            </tr>
+            <tr>
+              <td class="naming-highlight">祁门红茶</td>
+              <td><span class="naming-actual" style="border-color:var(--cat-red);color:var(--cat-red)">红茶</span></td>
+              <td>安徽祁门县产，与大吉岭、锡兰并列世界三大高香红茶</td>
+              <td>90-95°C</td>
+              <td>密封常温</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="container"><div class="section-divider"><span>🍂</span></div></div>
+
+  <!-- ============================================================
+       BREWING GUIDE
+       ============================================================ -->
+  <section class="section layer-section" id="brewing" data-layer="brewing">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">冲泡指南</span>
+        <h2 class="section-title">水温速查表</h2>
+        <p class="section-desc">不同茶类适宜不同的冲泡水温。温度过高会烫伤嫩叶，过低则难以释放风味。</p>
+      </div>
+
+      <div class="brew-grid">
+        <div class="brew-card">
+          <div class="brew-emoji">🟢</div>
+          <div class="brew-thermometer">
+            <div class="brew-mercury" data-height="75" style="height:0%;background:linear-gradient(to top,var(--cat-green),rgba(127,176,105,0.3))"></div>
+          </div>
+          <div class="brew-temp" style="color:var(--cat-green)">75-85°C</div>
+          <div class="brew-name">绿茶</div>
+        </div>
+        <div class="brew-card">
+          <div class="brew-emoji">⚪</div>
+          <div class="brew-thermometer">
+            <div class="brew-mercury" data-height="85" style="height:0%;background:linear-gradient(to top,var(--cat-white),rgba(216,207,192,0.3))"></div>
+          </div>
+          <div class="brew-temp" style="color:var(--cat-white)">85-95°C</div>
+          <div class="brew-name">白茶</div>
+        </div>
+        <div class="brew-card">
+          <div class="brew-emoji">🟡</div>
+          <div class="brew-thermometer">
+            <div class="brew-mercury" data-height="80" style="height:0%;background:linear-gradient(to top,var(--cat-yellow),rgba(212,168,67,0.3))"></div>
+          </div>
+          <div class="brew-temp" style="color:var(--cat-yellow)">80-85°C</div>
+          <div class="brew-name">黄茶</div>
+        </div>
+        <div class="brew-card">
+          <div class="brew-emoji">🔵</div>
+          <div class="brew-thermometer">
+            <div class="brew-mercury" data-height="95" style="height:0%;background:linear-gradient(to top,var(--cat-oolong),rgba(58,138,92,0.3))"></div>
+          </div>
+          <div class="brew-temp" style="color:var(--cat-oolong)">90-100°C</div>
+          <div class="brew-name">乌龙茶</div>
+        </div>
+        <div class="brew-card">
+          <div class="brew-emoji">🔴</div>
+          <div class="brew-thermometer">
+            <div class="brew-mercury" data-height="92" style="height:0%;background:linear-gradient(to top,var(--cat-red),rgba(199,91,57,0.3))"></div>
+          </div>
+          <div class="brew-temp" style="color:var(--cat-red)">90-95°C</div>
+          <div class="brew-name">红茶</div>
+        </div>
+        <div class="brew-card">
+          <div class="brew-emoji">⚫</div>
+          <div class="brew-thermometer">
+            <div class="brew-mercury" data-height="98" style="height:0%;background:linear-gradient(to top,var(--cat-dark),rgba(107,83,68,0.3))"></div>
+          </div>
+          <div class="brew-temp" style="color:#a08b76">95-100°C</div>
+          <div class="brew-name">黑茶</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NO RESULTS
+       ============================================================ -->
+  <div class="no-results" id="noResults">
+    <div class="no-results-emoji">🔍</div>
+    <h3>未找到匹配的茶叶</h3>
+    <p>试试其他关键词？如：龙井、白茶、铁观音…</p>
+  </div>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-quote">"茶者，南方之嘉木也。"</p>
+      <p class="footer-author">—— 陆羽《茶经》</p>
+      <p class="footer-copy">茶之百科 · Tea Encyclopedia &copy; 2026</p>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" title="返回顶部">↑</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
