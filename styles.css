@@ -753,9 +753,67 @@ a:hover {
   transition: width 1s var(--ease-out);
 }
 
-/* Storage info — full width */
-.tea-info-storage {
+/* Storage and Efficacy info — full width */
+.tea-info-storage,
+.tea-info-efficacy {
   grid-column: 1 / -1;
+}
+
+.efficacy-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.efficacy-tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: transform 0.2s var(--ease-out);
+}
+
+.efficacy-tag:hover {
+  transform: translateY(-1px);
+}
+
+/* Efficacy Tag Color Themes */
+.tag-theme-energy {
+  background: rgba(199, 91, 57, 0.08);
+  color: #ff8560;
+  border: 1px solid rgba(199, 91, 57, 0.2);
+}
+.tag-theme-cooling {
+  background: rgba(127, 176, 105, 0.08);
+  color: #a3d98b;
+  border: 1px solid rgba(127, 176, 105, 0.2);
+}
+.tag-theme-beauty {
+  background: rgba(212, 120, 156, 0.08);
+  color: #fca1c4;
+  border: 1px solid rgba(212, 120, 156, 0.2);
+}
+.tag-theme-digest {
+  background: rgba(212, 168, 67, 0.08);
+  color: #f7d070;
+  border: 1px solid rgba(212, 168, 67, 0.2);
+}
+.tag-theme-health {
+  background: rgba(90, 158, 111, 0.08);
+  color: #7ce899;
+  border: 1px solid rgba(90, 158, 111, 0.2);
+}
+.tag-theme-detox {
+  background: rgba(106, 171, 158, 0.08);
+  color: #92e0d1;
+  border: 1px solid rgba(106, 171, 158, 0.2);
+}
+.tag-theme-default {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
 }
 
 /* ============================================================

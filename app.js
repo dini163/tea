@@ -4,6 +4,66 @@
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // === Card Enrichment & Efficacy Integration ===
+  const teaCards = document.querySelectorAll('.tea-card');
+  
+  // Helper to determine semantic color themes for efficacy tags
+  function getEfficacyTagTheme(tag) {
+    tag = tag.trim();
+    if (/提神|醒脑|益思/.test(tag)) return 'tag-theme-energy';
+    if (/生津|止渴|消暑|清热|降火|解毒|避暑/.test(tag)) return 'tag-theme-cooling';
+    if (/抗衰|美容|抗氧化|美白/.test(tag)) return 'tag-theme-beauty';
+    if (/消食|去油|减肥|降脂|脾胃|暖胃|温胃|健脾|养胃|助消化/.test(tag)) return 'tag-theme-digest';
+    if (/防辐射|防龋齿|降压|降糖|血管|心血管|保护/.test(tag)) return 'tag-theme-health';
+    if (/祛湿|化痰|止痛|散寒|抗炎|杀菌|抗菌|理气|燥湿|排毒/.test(tag)) return 'tag-theme-detox';
+    return 'tag-theme-default';
+  }
+
+  teaCards.forEach(card => {
+    const teaNameEl = card.querySelector('.tea-card-name');
+    if (!teaNameEl) return;
+    
+    const teaName = teaNameEl.textContent.trim();
+    const details = window.TEA_DETAILS ? window.TEA_DETAILS[teaName] : null;
+    
+    if (details) {
+      // 1. Add "Core Efficacy" to the card UI as colorful badges
+      const cardInfoContainer = card.querySelector('.tea-card-info');
+      if (cardInfoContainer) {
+        const efficacyItem = document.createElement('div');
+        efficacyItem.className = 'tea-info-item tea-info-efficacy';
+        
+        // Split efficacy string by '、' or ',' or '，'
+        const rawEfficacy = details.coreEfficacy || details.efficacy || '';
+        const tags = rawEfficacy.split(/[、，,]+/).filter(t => t.trim().length > 0);
+        
+        let tagsHTML = `<div class="efficacy-tags-container">`;
+        tags.forEach(tag => {
+          const themeClass = getEfficacyTagTheme(tag);
+          tagsHTML += `<span class="efficacy-tag ${themeClass}">${tag}</span>`;
+        });
+        tagsHTML += `</div>`;
+        
+        efficacyItem.innerHTML = `
+          <span class="tea-info-label">核心功效</span>
+          ${tagsHTML}
+        `;
+        
+        // Insert it right before the storage info if it exists
+        const storageItem = cardInfoContainer.querySelector('.tea-info-storage');
+        if (storageItem) {
+          cardInfoContainer.insertBefore(efficacyItem, storageItem);
+        } else {
+          cardInfoContainer.appendChild(efficacyItem);
+        }
+      }
+      
+      // 2. Expand card data-name attribute in DOM dataset for efficacy search
+      let keywords = (card.dataset.name || '') + ` ${details.efficacy} ${details.coreEfficacy || ''}`;
+      card.dataset.name = keywords.toLowerCase();
+    }
+  });
+
   // === Scroll Reveal (Intersection Observer) ===
   const revealElements = document.querySelectorAll('.reveal, .reveal-left, .tea-card, .brew-card');
 
