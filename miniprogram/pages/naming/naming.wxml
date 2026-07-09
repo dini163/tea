@@ -1,0 +1,22 @@
+<!-- pages/naming/naming.wxml -->
+<view class="page">
+  <view class="container head">
+    <view class="section-label">第三层 · 商品命名</view>
+    <view class="section-title serif">“名不副实”的茶名</view>
+    <view class="section-desc">市场上很多茶的名字容易造成分类误解。以下对照表帮你看清每款茶的真实身份。</view>
+  </view>
+
+  <view class="container">
+    <view class="naming-row" wx:for="{{list}}" wx:key="name">
+      <view class="naming-head">
+        <text class="naming-name serif">{{item.name}}</text>
+        <text class="naming-actual" style="border-color:{{item.actualColor}};color:{{item.actualColor}}">{{item.actual}}</text>
+      </view>
+      <view class="naming-reason">{{item.reason}}</view>
+      <view class="naming-meta">
+        <text class="meta-pill">🌡️ {{item.temp}}</text>
+        <text class="meta-pill">📦 {{item.storage}}</text>
+      </view>
+    </view>
+  </view>
+</view>

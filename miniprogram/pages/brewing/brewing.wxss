@@ -1,0 +1,61 @@
+/* pages/brewing/brewing.wxss */
+.page { background: #0d1a0d; min-height: 100vh; }
+
+.head { padding-top: 48rpx; }
+.section-desc { max-width: 700rpx; }
+
+.brew-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+.brew-card {
+  width: 31%;
+  text-align: center;
+  padding: 36rpx 16rpx;
+  margin-bottom: 28rpx;
+  background: rgba(26, 46, 26, 0.6);
+  border: 1rpx solid rgba(200,169,110,0.15);
+  border-radius: 24rpx;
+}
+.brew-emoji {
+  font-size: 44rpx;
+  margin-bottom: 16rpx;
+}
+.brew-thermo {
+  position: relative;
+  width: 44rpx;
+  height: 180rpx;
+  margin: 0 auto 16rpx;
+  background: rgba(255,255,255,0.05);
+  border: 2rpx solid rgba(200,169,110,0.25);
+  border-radius: 9999rpx;
+  overflow: hidden;
+}
+.brew-mercury {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  border-radius: 0 0 9999rpx 9999rpx;
+}
+.brew-temp {
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  font-size: 34rpx;
+  font-weight: 700;
+  margin-bottom: 8rpx;
+}
+.brew-name {
+  font-size: 26rpx;
+  color: #c4bfb4;
+}
+
+.note {
+  font-size: 26rpx;
+  line-height: 1.8;
+  color: #c4bfb4;
+  background: rgba(255,255,255,0.03);
+  border: 1rpx solid rgba(200,169,110,0.15);
+  border-radius: 16rpx;
+  padding: 28rpx;
+  margin: 20rpx 32rpx 80rpx;
+}

@@ -1,0 +1,61 @@
+<!-- pages/detail/detail.wxml -->
+<view class="page" wx:if="{{tea}}">
+
+  <view class="hero-img">
+    <image src="{{tea.image}}" mode="aspectFill" class="hero-img-el"></image>
+    <view class="hero-mask"></view>
+    <view class="hero-text">
+      <view class="hero-name serif">{{tea.name}}</view>
+      <view class="hero-en">{{tea.en}}</view>
+    </view>
+  </view>
+
+  <view class="badges">
+    <view class="badge" style="border-color:{{color}};color:{{color}}">{{tea.type}}</view>
+    <view class="badge">发酵：{{tea.fermentation}}</view>
+    <view class="badge">🌡️ {{tea.temp}}</view>
+    <view class="badge">📦 {{tea.shelfLife}}</view>
+  </view>
+
+  <view class="container">
+    <view class="section">
+      <view class="sec-title"><text class="sec-bar"></text>茶叶功效</view>
+      <view class="sec-text">{{tea.efficacy}}</view>
+      <view class="efficacy-tags">
+        <text wx:for="{{tea.coreTags}}" wx:key="text" class="efficacy-tag {{item.theme}}">{{item.text}}</text>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="sec-title"><text class="sec-bar"></text>存放方式</view>
+      <view class="sec-text">{{tea.storage}}</view>
+    </view>
+
+    <view class="section" wx:if="{{tea.history}}">
+      <view class="sec-title"><text class="sec-bar"></text>历史渊源</view>
+      <view class="sec-text">{{tea.history}}</view>
+    </view>
+
+    <view class="section" wx:if="{{tea.anecdote}}">
+      <view class="sec-title"><text class="sec-bar"></text>轶事趣闻</view>
+      <view class="sec-text">{{tea.anecdote}}</view>
+    </view>
+
+    <view class="section" wx:if="{{tea.literature}}">
+      <view class="sec-title"><text class="sec-bar"></text>经典文献</view>
+      <view class="sec-text">{{tea.literature}}</view>
+    </view>
+
+    <view class="section" wx:if="{{tea.poem}}">
+      <view class="sec-title"><text class="sec-bar"></text>经典诗词</view>
+      <view class="poem serif">{{tea.poem}}</view>
+    </view>
+  </view>
+
+  <view class="share-tip">点击右上角「···」分享给好友或朋友圈 🍵</view>
+</view>
+
+<view wx:else class="empty-state">
+  <text class="emoji">🍵</text>
+  <view>未找到该茶叶</view>
+</view>

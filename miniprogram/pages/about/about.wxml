@@ -1,0 +1,37 @@
+<!-- pages/about/about.wxml -->
+<view class="page">
+  <view class="container about">
+    <view class="about-logo serif">🍵 茶之百科</view>
+    <view class="about-sub">中国茶叶分类 · 冲泡 · 存放指南</view>
+
+    <view class="about-card">
+      <view class="about-stat">
+        <text class="num serif">{{count}}</text>
+        <text class="lbl">款茶叶</text>
+      </view>
+      <view class="about-stat">
+        <text class="num serif">3</text>
+        <text class="lbl">层分类法</text>
+      </view>
+      <view class="about-stat">
+        <text class="num serif">6</text>
+        <text class="lbl">大基础茶类</text>
+      </view>
+    </view>
+
+    <view class="about-quote serif">
+      “茶者，南方之嘉木也。”
+      <view class="about-author">—— 陆羽《茶经》</view>
+    </view>
+
+    <view class="about-text">本小程序由「茶之百科」网站转换而来，收录中国六大基础茶类与再加工茶的代表品种，提供最佳冲泡温度、存放方式与功效典故，助你科学饮茶、从容识茶。</view>
+
+    <view class="about-actions">
+      <view class="about-btn" bindtap="goIndex">📚 浏览茶库</view>
+      <view class="about-btn ghost" bindtap="goBrewing">🌡️ 冲泡指南</view>
+      <view class="about-btn ghost" bindtap="goNaming">📖 识茶名</view>
+    </view>
+
+    <view class="about-copy">茶之百科 · Tea Encyclopedia © 2026</view>
+  </view>
+</view>

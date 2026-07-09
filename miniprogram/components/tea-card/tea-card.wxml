@@ -1,0 +1,43 @@
+<!-- components/tea-card/tea-card.wxml -->
+<view class="tea-card" bindtap="onTap" hover-class="tea-card--hover">
+  <view class="tea-card-img">
+    <image class="tea-card-img-el" src="{{tea.image}}" mode="aspectFill" lazy-load="true"></image>
+    <view class="tea-badge" style="background:{{tea.color}}">{{tea.type}}</view>
+  </view>
+
+  <view class="tea-card-body">
+    <view class="tea-card-name serif">{{tea.name}}</view>
+    <view class="tea-card-name-en">{{tea.en}}</view>
+
+    <view class="tea-card-info">
+      <view class="tea-info-item">
+        <view class="tea-info-label">冲泡温度</view>
+        <view class="tea-info-value">{{tea.temp}}</view>
+        <view class="temp-bar">
+          <view class="temp-bar-fill" style="width:{{tea.tempPercent}}%;background:{{tea.color}}"></view>
+        </view>
+      </view>
+
+      <view class="tea-info-item">
+        <view class="tea-info-label">保质期</view>
+        <view class="tea-info-value">{{tea.shelfLife}}</view>
+      </view>
+
+      <view class="tea-info-item tea-info-storage">
+        <view class="tea-info-label">存放方式</view>
+        <view class="tea-info-value">{{tea.storage}}</view>
+      </view>
+
+      <view class="tea-info-item tea-info-efficacy">
+        <view class="tea-info-label">核心功效</view>
+        <view class="efficacy-tags">
+          <text
+            wx:for="{{tea.coreTags}}"
+            wx:key="text"
+            class="efficacy-tag {{item.theme}}"
+          >{{item.text}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

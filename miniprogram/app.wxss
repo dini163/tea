@@ -1,0 +1,163 @@
+/* app.wxss — 茶之百科 全局样式（暗色东方美学，对齐网站设计系统） */
+
+page {
+  /* 颜色 — 暗色东方调色板 */
+  --bg-primary: #0d1a0d;
+  --bg-secondary: #142114;
+  --bg-tertiary: #1a2e1a;
+  --bg-card: rgba(26, 46, 26, 0.6);
+  --bg-card-hover: rgba(35, 60, 35, 0.8);
+  --bg-glass: rgba(255, 255, 255, 0.03);
+
+  --text-primary: #f5f0e8;
+  --text-secondary: #c4bfb4;
+  --text-tertiary: #8a8578;
+  --text-accent: #c8a96e;
+
+  --gold: #c8a96e;
+  --gold-light: #dcc08a;
+  --gold-dark: #a68b4b;
+
+  --cat-green: #7fb069;
+  --cat-white: #d8cfc0;
+  --cat-yellow: #d4a843;
+  --cat-oolong: #3a8a5c;
+  --cat-red: #c75b39;
+  --cat-dark: #6b5344;
+  --cat-flower: #d4789c;
+  --cat-citrus: #e8943a;
+  --cat-chenpi: #c47a2e;
+  --cat-compressed: #8b7355;
+  --cat-extract: #6aab9e;
+
+  --border-subtle: rgba(200, 169, 110, 0.15);
+  --border-medium: rgba(200, 169, 110, 0.25);
+  --border-accent: rgba(200, 169, 110, 0.5);
+
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(200, 169, 110, 0.15);
+
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  font-size: 28rpx;
+  line-height: 1.7;
+}
+
+view, text, scroll-view {
+  box-sizing: border-box;
+}
+
+/* 通用容器 */
+.container {
+  width: 100%;
+  padding: 0 32rpx;
+}
+
+/* 衬线标题字体（小程序端用系统宋体回退） */
+.serif {
+  font-family: "Songti SC", "Noto Serif SC", "STSong", serif;
+}
+
+/* 文字色工具类 */
+.t-primary { color: var(--text-primary); }
+.t-secondary { color: var(--text-secondary); }
+.t-tertiary { color: var(--text-tertiary); }
+.t-gold { color: var(--gold); }
+
+/* 区块标题 */
+.section-label {
+  display: inline-block;
+  font-size: 22rpx;
+  letter-spacing: 4rpx;
+  color: var(--gold);
+  background: rgba(200, 169, 110, 0.1);
+  padding: 6rpx 24rpx;
+  border-radius: 9999rpx;
+  border: 1rpx solid var(--border-subtle);
+}
+
+.section-title {
+  font-family: "Songti SC", "Noto Serif SC", serif;
+  font-size: 48rpx;
+  font-weight: 700;
+  margin: 16rpx 0 12rpx;
+  color: var(--text-primary);
+}
+
+.section-desc {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* 分隔线 */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  margin: 64rpx 0;
+  opacity: 0.4;
+}
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1rpx;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* 卡片基础 */
+.card {
+  background: var(--bg-card);
+  border: 1rpx solid var(--border-subtle);
+  border-radius: 24rpx;
+}
+
+/* 温度条 */
+.temp-bar {
+  width: 100%;
+  height: 8rpx;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 9999rpx;
+  overflow: hidden;
+  margin-top: 8rpx;
+}
+.temp-bar-fill {
+  height: 100%;
+  border-radius: 9999rpx;
+}
+
+/* 功效标签 */
+.efficacy-tag {
+  font-size: 22rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 8rpx;
+  font-weight: 500;
+  margin: 0 12rpx 12rpx 0;
+  display: inline-block;
+}
+.tag-energy { background: rgba(199, 91, 57, 0.12); color: #ff8560; border: 1rpx solid rgba(199, 91, 57, 0.25); }
+.tag-cooling { background: rgba(127, 176, 105, 0.12); color: #a3d98b; border: 1rpx solid rgba(127, 176, 105, 0.25); }
+.tag-beauty { background: rgba(212, 120, 156, 0.12); color: #fca1c4; border: 1rpx solid rgba(212, 120, 156, 0.25); }
+.tag-digest { background: rgba(212, 168, 67, 0.12); color: #f7d070; border: 1rpx solid rgba(212, 168, 67, 0.25); }
+.tag-health { background: rgba(90, 158, 111, 0.12); color: #7ce899; border: 1rpx solid rgba(90, 158, 111, 0.25); }
+.tag-detox { background: rgba(106, 171, 158, 0.12); color: #92e0d1; border: 1rpx solid rgba(106, 171, 158, 0.25); }
+.tag-default { background: rgba(255, 255, 255, 0.04); color: var(--text-secondary); border: 1rpx solid var(--border-subtle); }
+
+/* 通用按钮 */
+.btn-gold {
+  background: var(--gold);
+  color: var(--bg-primary);
+  font-weight: 600;
+  border-radius: 9999rpx;
+  border: none;
+}
+
+/* 空状态 */
+.empty-state {
+  text-align: center;
+  padding: 120rpx 40rpx;
+  color: var(--text-tertiary);
+}
+.empty-state .emoji { font-size: 80rpx; display: block; margin-bottom: 24rpx; }

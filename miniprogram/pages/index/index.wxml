@@ -1,0 +1,73 @@
+<!-- pages/index/index.wxml -->
+<view class="page">
+
+  <!-- HERO -->
+  <view class="hero">
+    <view class="hero-glow"></view>
+    <view class="hero-deco">
+      <text class="leaf">🍃</text><text class="leaf">🌿</text><text class="leaf">🍂</text><text class="leaf">🌿</text>
+    </view>
+    <view class="hero-sub">探索 · 品味 · 收藏</view>
+    <view class="hero-title serif">茶之百科</view>
+    <view class="hero-line"></view>
+    <view class="hero-desc">从不发酵的鲜翠绿茶，到越陈越香的醇厚黑茶。三层分类法带你系统认识中国茶的全貌——种类、冲泡、存放，一站俱全。</view>
+    <view class="hero-actions">
+      <view class="hero-btn" bindtap="goBrewing">🌡️ 冲泡指南</view>
+      <view class="hero-btn ghost" bindtap="goNaming">📖 识茶名</view>
+    </view>
+  </view>
+
+  <!-- 搜索 + 分类切换 -->
+  <view class="toolbar">
+    <view class="search">
+      <text class="search-icon">🔍</text>
+      <input
+        class="search-input"
+        placeholder="搜索茶叶、分类、功效…"
+        placeholder-class="search-ph"
+        value="{{keyword}}"
+        bindinput="onSearchInput"
+        confirm-type="search"
+      />
+      <text wx:if="{{keyword}}" class="search-clear" bindtap="onClearSearch">✕</text>
+    </view>
+    <view class="tabs">
+      <view
+        wx:for="{{tabs}}"
+        wx:key="key"
+        class="tab {{activeTab === item.key ? 'tab--active' : ''}}"
+        data-tab="{{item.key}}"
+        bindtap="onTabChange"
+      >{{item.label}}</view>
+    </view>
+  </view>
+
+  <!-- 分类分组 -->
+  <view class="container groups">
+    <block wx:for="{{groups}}" wx:key="category" wx:for-item="group">
+      <view class="group-header">
+        <view class="group-dot" style="background:{{group.color}}"></view>
+        <view class="group-name serif">{{group.category}}</view>
+        <view class="group-count">共 {{group.teas.length}} 款</view>
+      </view>
+      <view class="tea-grid">
+        <tea-card
+          wx:for="{{group.teas}}"
+          wx:key="id"
+          wx:for-item="tea"
+          class="tea-grid-item"
+          tea="{{tea}}"
+          bind:tap="onCardTap"
+        ></tea-card>
+      </view>
+    </block>
+
+    <view wx:if="{{showEmpty}}" class="empty-state">
+      <text class="emoji">🔍</text>
+      <view class="serif" style="font-size:32rpx;color:#f5f0e8;margin-bottom:8rpx;">未找到匹配的茶叶</view>
+      <view class="t-tertiary">试试「龙井」「白茶」「铁观音」…</view>
+    </view>
+  </view>
+
+  <view class="footer-quote serif">“茶者，南方之嘉木也。” —— 陆羽《茶经》</view>
+</view>

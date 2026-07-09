@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "tea-card": "/components/tea-card/tea-card"
+  },
+  "navigationBarTitleText": "茶之百科"
+}

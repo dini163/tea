@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/brewing/brewing",
+    "pages/naming/naming",
+    "pages/about/about"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#0d1a0d",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "茶之百科",
+    "backgroundColor": "#0d1a0d",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#8a8578",
+    "selectedColor": "#c8a96e",
+    "backgroundColor": "#0d1a0d",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "茶库"
+      },
+      {
+        "pagePath": "pages/brewing/brewing",
+        "text": "冲泡"
+      },
+      {
+        "pagePath": "pages/naming/naming",
+        "text": "识名"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

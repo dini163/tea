@@ -1,0 +1,90 @@
+/* pages/about/about.wxss */
+.page { background: #0d1a0d; min-height: 100vh; }
+.about {
+  padding: 80rpx 48rpx 100rpx;
+  text-align: center;
+}
+.about-logo {
+  font-size: 64rpx;
+  font-weight: 900;
+  color: #f5f0e8;
+}
+.about-sub {
+  font-size: 26rpx;
+  color: #8a8578;
+  letter-spacing: 4rpx;
+  margin-top: 12rpx;
+}
+
+.about-card {
+  display: flex;
+  justify-content: space-around;
+  margin: 60rpx 0;
+  padding: 36rpx 16rpx;
+  background: rgba(26, 46, 26, 0.6);
+  border: 1rpx solid rgba(200,169,110,0.15);
+  border-radius: 24rpx;
+}
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-stat .num {
+  font-size: 56rpx;
+  font-weight: 900;
+  color: #c8a96e;
+}
+.about-stat .lbl {
+  font-size: 22rpx;
+  color: #8a8578;
+  margin-top: 6rpx;
+}
+
+.about-quote {
+  font-size: 36rpx;
+  line-height: 1.8;
+  color: #c8a96e;
+  font-style: italic;
+}
+.about-author {
+  font-size: 24rpx;
+  color: #8a8578;
+  margin-top: 12rpx;
+  font-style: normal;
+}
+
+.about-text {
+  font-size: 27rpx;
+  line-height: 1.9;
+  color: #c4bfb4;
+  text-align: justify;
+  margin: 48rpx 0;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  justify-content: center;
+  margin-bottom: 60rpx;
+}
+.about-btn {
+  font-size: 26rpx;
+  padding: 18rpx 40rpx;
+  border-radius: 9999rpx;
+  background: #c8a96e;
+  color: #0d1a0d;
+  font-weight: 600;
+}
+.about-btn.ghost {
+  background: transparent;
+  border: 1rpx solid rgba(200,169,110,0.4);
+  color: #c8a96e;
+}
+
+.about-copy {
+  font-size: 22rpx;
+  color: #8a8578;
+  opacity: 0.6;
+}

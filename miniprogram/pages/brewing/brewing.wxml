@@ -1,0 +1,30 @@
+<!-- pages/brewing/brewing.wxml -->
+<view class="page">
+  <view class="container head">
+    <view class="section-label">冲泡指南</view>
+    <view class="section-title serif">水温速查表</view>
+    <view class="section-desc">{{tip}}</view>
+  </view>
+
+  <view class="container">
+    <view class="brew-grid">
+      <view class="brew-card" wx:for="{{list}}" wx:key="name">
+        <view class="brew-emoji">{{item.emoji}}</view>
+        <view class="brew-thermo">
+          <view
+            class="brew-mercury"
+            style="height:{{item.percent}}%;background:linear-gradient(to top,{{item.color}},rgba(255,255,255,0.08))"
+          ></view>
+        </view>
+        <view class="brew-temp" style="color:{{item.color}}">{{item.temp}}</view>
+        <view class="brew-name">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="divider container"><text>🍃</text></view>
+
+  <view class="container note">
+    嫩芽绿茶水温宜低（75–85°C），以免烫伤鲜叶；乌龙、黑茶、紧压茶可用沸水（95–100°C）激发香气与滋味。
+  </view>
+</view>
